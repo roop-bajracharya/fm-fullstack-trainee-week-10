@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
+
+import "../App.css";
+
 import { addTodo, todoSelector, todoToggled } from "./store";
 
 function App() {
@@ -33,24 +35,26 @@ function App() {
         Add
       </button>
       <div>
-        <h2>TODOS</h2>
-        {todos.map((todo) => (
-          <div key={todo.id}>
-            <span>{todo.text}</span>
-            <span> </span>
-            <span>
-              <b>{todo.completed ? "Done" : "Remaining"}</b>
-            </span>
-            <span> </span>
-            <button
-              onClick={() => {
-                dispatch(todoToggled(todo));
-              }}
-            >
-              Toggle Status
-            </button>
-          </div>
-        ))}
+        <div>
+          <h2>TODOS</h2>
+          {todos.map((todo) => (
+            <div key={todo.id}>
+              <span>{todo.text}</span>
+              <span> </span>
+              <span>
+                <b>{todo.completed ? "Done" : "Remaining"}</b>
+              </span>
+              <span> </span>
+              <button
+                onClick={() => {
+                  dispatch(todoToggled(todo));
+                }}
+              >
+                Toggle Status
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

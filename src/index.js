@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import AppReduxOnly from "./redux-only/App";
+import AppReduxToolkit from "./redux-with-toolkit/App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { storeWithoutToolKit } from "./store";
+import { storeWithToolkit } from "./redux-with-toolkit/store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Provider store={storeWithoutToolKit}>
+      <App />
+    </Provider> */}
+
+    <Provider store={storeWithToolkit}>
+      <AppReduxToolkit />
+    </Provider>
   </React.StrictMode>
 );
 
