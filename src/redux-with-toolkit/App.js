@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "../App.css";
 
 import { addTodo, selectTodos, todoToggled } from "../redux-with-toolkit/store";
-// import { ApiData } from "./components/ApiData";
 import { Stats } from "./components/Stats";
 
 function App() {
@@ -62,6 +61,9 @@ function App() {
         </div>
       </div>
       {/* <ApiData /> */}
+      {/* <NormalIncrement /> */}
+      {/* <UseMemoExample /> */}
+      {/* <UseRefExample /> */}
     </div>
   );
 }
